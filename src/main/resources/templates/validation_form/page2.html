@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h1>
+        상품1 주문
+    </h1>
+</div>
+
+<form method="POST">
+    <div class="con">
+        <label for="item1">상품 색상 : </label>
+        <select name="itemColor" id="item1">
+            <option value="ITEM_1">색상 1</option>
+            <option value="ITEM_2">색상 2</option>
+            <option value="ITEM_3">색상 3</option>
+        </select>
+
+        <label for="price">가격</label>
+        <input id="price" type="text" readonly disabled value="5000">
+
+    </div>
+    <div class="con">
+        <fieldset>
+            <legend>
+                옵션 선택 (Optional)
+            </legend>
+            <div>
+                <input id="item_option_1" type="checkbox" name="itemOption" value="option1">
+                <label for="item_option_1"> 옵션 1</label>
+            </div>
+            <div>
+                <input id="item_option_2" type="checkbox" name="itemOption" value="option2">
+                <label for="item_option_1"> 옵션 2</label>
+            </div>
+            <div>
+                <input id="item_option_3" type="checkbox" name="itemOption" value="option3">
+                <label for="item_option_1"> 옵션 3</label>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="con">
+        <fieldset>
+            <legend>배송 방법 (Required)</legend>
+            <div>
+                <input checked id="delivery_way_1" type="radio" name="deliveryOption" value="premium">
+                <label for="delivery_way_1"> 당일 배송 </label>
+            </div>
+            <div>
+                <input id="delivery_way_2" type="radio" name="deliveryOption" value="general">
+                <label for="delivery_way_2"> 일반 배송 </label>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="con">
+        <div>
+            <input id="order-amount"
+                   min="1"
+                   type="number"
+                   name="amount"
+                   value="1"
+                   required
+                   onchange="
+                           const PRICE = document.getElementById('price').value;
+                           const totalEl = document.getElementById('total-price');
+                           const total_price = PRICE * this.value;
+                           totalEl.value = total_price;
+                        "
+            >
+            <label for="order-amount">주문 갯수</label>
+        </div>
+
+        <div>
+            <label for="total-price">총 가격</label>
+            <input id="total-price" type="text" readonly disabled value="5000">
+        </div>
+
+    </div>
+
+    <div class="con">
+
+        <label for="detail">추가 요청사항</label>
+        <input id="detail" type="text" name="detail">
+
+    </div>
+
+    <div class="con">
+        <button type="submit" style="margin-right: 10px">주문</button>
+        <button type="reset">취소</button>
+    </div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page1</title>
+  <script>
+    const url = new URL(location.href);
+
+    const searchParams = url.searchParams;
+    console.log(searchParams);
+
+    if ( searchParams.has("err")) {
+      if ( searchParams.get("err") === "true") {
+
+        const errCode = searchParams.get('code');
+
+        if ( errCode === "1" ) {
+          alert("이름 혹은 이메일이 잘못 입력되었습니다.");
+        }
+
+      }
+    }
+  </script>
+</head>
+<body>
+<div>
+  <h1>
+    로그인
+  </h1>
+</div>
+<form method="POST">
+
+  <div>
+    <label for="name">
+      Name :
+    </label>
+    <input id="name" type="text" name="name">
+  </div>
+
+  <div style="margin-top: 5px">
+    <label for="email">
+      Email :
+    </label>
+    <input id="email" type="text" name="email">
+  </div>
+
+  <button>로그인</button>
+</form>
+</body>
+</html>

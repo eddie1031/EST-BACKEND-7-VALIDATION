@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Page1</title>
+  <style>
+    .con {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <h1>
+    데이터 송신 테스트
+  </h1>
+</div>
+<form method="POST">
+  <div class="con">
+    <label for="text">
+      Text:
+    </label>
+    <input id="text" type="text" name="text">
+  </div>
+
+  <div class="con">
+    <label for="email">
+      Email:
+    </label>
+    <input id="email" type="email" name="email">
+  </div>
+
+  <div class="con">
+    <label for="phone">
+      Phone:
+    </label>
+    <input id="phone" type="text" name="phone">
+  </div>
+
+  <div class="con">
+    <label for="local-date">
+      LocalDate:
+    </label>
+    <input id="local-date" type="date" name="local_date">
+  </div>
+
+  <div class="con">
+    <button>전송</button>
+  </div>
+
+</form>
+</body>
+</html>
